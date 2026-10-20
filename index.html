@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Akhil &amp; Kesiah | 11th January 2027</title>
+  <meta name="description" content="Mrs. Elcey Varghese & Mr. George Varghese request your presence and prayers at the Holy Matrimony of their son Dr. Akhil George Varghese with Dr. Kesiah Lee Abey on 11th January 2027.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Akhil &amp; Kesiah — Wedding Invitation">
+  <meta property="og:description" content="11th January 2027 · Wedding at St. Thomas Orthodox Cathedral, Kannamkode-Adoor & Reception at Thatta Road, Adoor. 'Therefore what God has joined together, let no one separate.' — Matthew 19:6">
+  <meta property="og:image" content="share.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta name="twitter:image" content="share.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Noto+Sans+Malayalam:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background music (autoplay, loop) -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Mute / Unmute button — fixed bottom-left, always visible -->
+  <button id="mute-btn" aria-label="Toggle music" title="Toggle music">
+    <svg id="icon-sound" width="22" height="22" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <svg id="icon-muted" width="22" height="22" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         style="display:none;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- SVG defs for gold gradient used by cross icons -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="crossGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F3E4C9"/>
+        <stop offset="50%" stop-color="#C39A3E"/>
+        <stop offset="100%" stop-color="#8C6A21"/>
+      </linearGradient>
+      <linearGradient id="crossGradDark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9C5A50"/>
+        <stop offset="100%" stop-color="#6E362D"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ COVER / OPENING ANIMATION ============ -->
+  <div id="cover">
+    <div class="fold left">
+      <div class="cover-top">
+        <div class="cover-arabic">℣</div>
+        <p class="cover-verse">“So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.”
+          <span class="cover-verse-ref">Matthew 19:6</span>
+        </p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-name text-right">
+          <div class="n">Akhil</div>
+          <div class="r">The Groom</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-center" id="tapToOpen">
+      <div class="seal">
+        <!-- Interlocked wedding rings -->
+        <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:62px;height:38px;">
+          <defs>
+            <linearGradient id="ringGold1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F0D878"/>
+              <stop offset="50%" stop-color="#C39A3E"/>
+              <stop offset="100%" stop-color="#9A7428"/>
+            </linearGradient>
+            <linearGradient id="ringGold2" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F0D878"/>
+              <stop offset="50%" stop-color="#DCC07E"/>
+              <stop offset="100%" stop-color="#A07830"/>
+            </linearGradient>
+            <!-- clip left ring so it appears behind right ring at overlap -->
+            <clipPath id="clipLeft">
+              <rect x="0" y="0" width="38" height="40"/>
+            </clipPath>
+            <!-- clip right ring so it appears in front at overlap -->
+            <clipPath id="clipRight">
+              <rect x="26" y="0" width="38" height="40"/>
+            </clipPath>
+          </defs>
+
+          <!-- Left ring (behind) — clipped to left side -->
+          <g clip-path="url(#clipLeft)">
+            <circle cx="24" cy="20" r="14.5" stroke="url(#ringGold1)" stroke-width="4" fill="none"/>
+          </g>
+          <!-- Right ring (front) — full -->
+          <circle cx="40" cy="20" r="14.5" stroke="url(#ringGold2)" stroke-width="4" fill="none"/>
+          <!-- Left ring front arc (overlapping portion in front) -->
+          <g clip-path="url(#clipRight)">
+            <circle cx="24" cy="20" r="14.5" stroke="url(#ringGold1)" stroke-width="4" fill="none"/>
+          </g>
+
+          <!-- Small diamond on left ring top -->
+          <polygon points="24,3.5 26,6 24,8.5 22,6" fill="#F3E4C9" opacity="0.95"/>
+          <polygon points="24,3.5 26,6 24,8.5 22,6" fill="none" stroke="rgba(195,154,62,0.6)" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="tap-label">Tap to open</div>
+    </div>
+
+    <div class="fold right">
+      <div class="cover-top" style="visibility:hidden">
+        <div class="cover-arabic">℣</div>
+        <p class="cover-verse">placeholder</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-name">
+          <div class="n">Kesiah</div>
+          <div class="r">The Bride</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-cross">
+        <img src="dove.png" alt="Two doves emblem" style="width:160px; height:auto; display:block; margin:0 auto;">
+      </div>
+      <p class="hero-verse">“So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.”<br>
+        <span class="hero-verse-ref">— Matthew 19:6</span>
+      </p>
+      <h1 class="hero-names">Akhil &amp; Kesiah</h1>
+      <div class="hero-date">11  January 2027 · Monday</div>
+      <p class="hero-tag">are uniting in Holy Matrimony, and we request your presence &amp; blessings</p>
+      <div class="scroll-cue"><span>Scroll</span><div class="chev"></div></div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown">
+      <div class="eyebrow light">Counting Down</div>
+      <h2>Until We Say &ldquo;I Do&rdquo;</h2>
+      <div class="divider light"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+      <div class="countdown-grid" id="countdown">
+        <div class="cbox"><div class="cnum" id="cd-days">00</div><div class="clabel">Days</div></div>
+        <div class="cbox"><div class="cnum" id="cd-hours">00</div><div class="clabel">Hours</div></div>
+        <div class="cbox"><div class="cnum" id="cd-mins">00</div><div class="clabel">Minutes</div></div>
+        <div class="cbox"><div class="cnum" id="cd-secs">00</div><div class="clabel">Seconds</div></div>
+      </div>
+    </section>
+
+    <!-- INVITATION -->
+    <section class="invite">
+      <div class="eyebrow">With Joyful Hearts</div>
+      <div class="divider"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+      <p class="invite-lead">Together with our beloved parents and families, we joyfully solicit your esteemed presence and blessings on the auspicious occasion of our wedding.</p>
+
+      <div class="couple-row">
+        <!-- Groom -->
+        <div class="couple-col">
+          <div class="role">The Groom</div>
+          <div class="name">Dr. Akhil George Varghese</div>
+          <div class="parents">
+            Son of<br>
+            <strong>Mrs. Elcey Varghese &amp; Mr. George Varghese</strong><br>
+            (Grand S/o Late P.K. George &amp; Late Ponnamma George and Late Sanjivi Thomas &amp; Late Sosamma Thomas)<br>
+            Pulari, Peringanadu P.O, Adoor,<br>
+            Pathanamthitta - 691551<br>
+            Mob: 9496523000, 9567875001, 9961815260
+          </div>
+        </div>
+        <div class="amp">&amp;</div>
+        <!-- Bride -->
+        <div class="couple-col">
+          <div class="role">The Bride</div>
+          <div class="name">Dr. Kesiah Lee Abey</div>
+          <div class="parents">
+            Daughter of<br>
+            <strong>Mrs. Suni Varghese &amp; Mr. Abey Jacob</strong><br>
+            Cherupuzhethu House,<br>
+            Pullad P.O, Thiruwalla, Pathanamthitta
+          </div>
+        </div>
+      </div>
+
+      <p class="invite-note">Your prayers and gracious presence on this beautiful day will make our wedding celebration truly complete.</p>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events">
+      <div class="eyebrow">Celebrations</div>
+      <h2>Events</h2>
+      <div class="divider"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="tag">Holy Matrimony</div>
+          <h3>Wedding Ceremony</h3>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="calendar-days"></i></span>
+            <div>
+              <div class="t1">11th January 2027 — Monday</div>
+              <div class="t2">10:30 AM</div>
+            </div>
+          </div>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="map-pin"></i></span>
+            <div>
+              <div class="t1">St. Thomas Orthodox Cathedral, Kannamkode-Adoor.</div>
+            </div>
+          </div>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="church"></i></span>
+            <div>
+              <div class="t1">H.G. Dr. Zacharias Mar Aprem</div>
+              <div class="t2">Metropolitan of Diocese of Adoor, Kadampanadu</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">Join Us After</div>
+          <h3>Reception</h3>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="calendar-days"></i></span>
+            <div>
+              <div class="t1">11th January 2027 — Monday</div>
+              <div class="t2">Immediately following Ceremony</div>
+            </div>
+          </div>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="map-pin"></i></span>
+            <div>
+              <div class="t1">Reception Venue</div>
+              <div class="t2">Thatta Road, Adoor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section class="venue">
+      <div class="eyebrow">Where To Find Us</div>
+      <h2>Venues</h2>
+      <div class="divider"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+      <div class="venue-card">
+        <div class="venue-tag">✦ Wedding Venue ✦</div>
+        <div class="venue-name">St. Thomas Orthodox Cathedral, Kannamkode-Adoor.</div>
+        <div class="venue-map">
+          <iframe
+            src="https://www.google.com/maps?q=9.1537125,76.7379844&amp;output=embed"
+            width="100%" height="320" style="border:0; display:block;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Wedding venue, Kannamkode, Adoor">
+          </iframe>
+        </div>
+        <div class="venue-qr">
+          <img src="qr-wedding.png" alt="QR code for the wedding venue location" width="170" height="170">
+          <div class="qr-label">Scan for Location</div>
+        </div>
+        <a class="venue-btn" href="https://www.google.com/maps/search/?api=1&amp;query=9.1537125,76.7379844" target="_blank" rel="noopener">
+          <i data-lucide="map-pin"></i> Open in Google Maps
+        </a>
+      </div>
+
+      <div class="venue-card">
+        <div class="venue-tag">✦ Reception Venue ✦</div>
+        <div class="venue-name">St. Thomas Parish Hall</div>
+        <div class="venue-map">
+          <iframe
+            src="https://www.google.com/maps?q=Thatta+Road,+Adoor-Anandapally-Thumpamon+Rd,+Adoor,+Keralam+691523&amp;output=embed"
+            width="100%" height="320" style="border:0; display:block;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Reception venue, Thatta Road, Adoor">
+          </iframe>
+        </div>
+        <div class="venue-qr">
+          <img src="qr-reception.png" alt="QR code for the reception venue location" width="170" height="170">
+          <div class="qr-label">Scan for Location</div>
+        </div>
+        <a class="venue-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Thatta+Road,+Adoor-Anandapally-Thumpamon+Rd,+Adoor,+Keralam+691523" target="_blank" rel="noopener">
+          <i data-lucide="map-pin"></i> Open in Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- PHOTO BANNER -->
+    <section class="photo-section">
+      <div class="photo-wrap">
+        <img src="couple-photo.jpg" alt="Akhil and Kesiah holding hands">
+        <div class="photo-overlay">
+          <div class="photo-caption">Two hearts, one journey
+            <span class="amp2">Akhil &amp; Kesiah</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <!-- Ornate crucifix for dark maroon closing section -->
+      <!--
+      <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:77px;margin-bottom:8px;">
+        <defs>
+          <linearGradient id="closingGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f0d878"/>
+            <stop offset="50%" stop-color="#DCC07E"/>
+            <stop offset="100%" stop-color="#b89040"/>
+          </linearGradient>
+        </defs>
+        <path d="M37 4 Q40 0 43 4" stroke="#f0d878" stroke-width="1.2" fill="none" opacity="0.8"/>
+        <ellipse cx="5" cy="38" rx="3.5" ry="5" fill="#f0d878" opacity="0.85"/>
+        <ellipse cx="75" cy="38" rx="3.5" ry="5" fill="#f0d878" opacity="0.85"/>
+        <circle cx="40" cy="98" r="9" fill="url(#closingGold)" opacity="0.95"/>
+        <circle cx="40" cy="98" r="7" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+        <rect x="38.5" y="92.5" width="3" height="11" rx="0.6" fill="rgba(255,255,255,0.5)"/>
+        <rect x="34.5" y="96.5" width="11" height="3" rx="0.6" fill="rgba(255,255,255,0.5)"/>
+        <circle cx="40" cy="24" r="5.5" fill="#c89a78" opacity="0.88"/>
+        <circle cx="40" cy="24" r="7" fill="none" stroke="#f0d878" stroke-width="1.2" opacity="0.7"/>
+        <path d="M35.5 22 Q37.5 19 40 21 Q42.5 19 44.5 22" stroke="#6B4020" stroke-width="1.2" fill="none" opacity="0.6"/>
+        <path d="M14 38 Q27 35 40 37 Q53 35 66 38" stroke="#c89a78" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.82"/>
+        <ellipse cx="40" cy="55" rx="4" ry="9" fill="#c89a78" opacity="0.85"/>
+        <path d="M36 63 Q38 70 40 67 Q42 70 44 63" fill="rgba(255,255,255,0.35)"/>
+        <path d="M34 12 Q30 15 29 20" stroke="#f0d878" stroke-width="0.8" fill="none" opacity="0.5"/>
+        <path d="M46 12 Q50 15 51 20" stroke="#f0d878" stroke-width="0.8" fill="none" opacity="0.5"/>
+      </svg>
+      -->
+      <div class="names">Akhil &amp; Kesiah</div>
+      <div class="date">11 January 2027</div>
+      <p class="msg">With Love &amp; Prayers,<br>we look forward to celebrating with you.</p>
+
+      <div class="sharing-happiness">
+        <div class="sharing-title">Best Compliments from:</div>
+        <p class="sharing-names">Arun George Varghese, Dr Larin Ann Raju, Jayden Arun Varghese &amp; Juvita Sera Arun</p>
+      </div>
+
+      <div class="tag">#AkhilKesiah2027</div>
+      <div class="foot">Akhil &amp; Kesiah · 11 January 2027</div>
+    </section>
+
+  </main>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
