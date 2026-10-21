@@ -30,15 +30,16 @@ function openInvite() {
   if (opened) return; // prevent double-fire from bubbling touch/click events
   opened = true;
 
+  // This tap is a guaranteed trusted gesture — best chance for audio to start
+  // Play music BEFORE animations to maximize success rate
+  tryPlayMusic();
+
   cover.classList.add('open');
   main.classList.add('show');
   document.documentElement.classList.remove('locked');
   setTimeout(() => {
     cover.classList.add('hidden');
   }, 1250);
-
-  // This tap is a guaranteed trusted gesture — best chance for audio to start
-  tryPlayMusic();
 }
 
 // Only one listener needed on the outer cover — tapToOpen is inside it,
